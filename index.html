@@ -1,0 +1,397 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enterprise Drupal DevOps Without the Devs or the Ops</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide fill nobackground"  style="background-image: url(images/uss-enterprise.jpg)">
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/davehall.jpg)">
+    <hgroup>
+      <h2 class="white">Who Am I?</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="http://www.flickr.com/photos/bendechrau/4766368608/">Ben Dechrai</a></footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Where do I Work?</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/technocrat.png" alt="Technocrat">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Traditional Small Site Workflow</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Everything happens on production</li>
+        <li>Deployment is a "git pull" and "drush updatedb"</li>
+      </ul>
+      <img src="images/publishing-options.png" alt="Technocrat">
+      <p>OK for a blog, but not for an enterprise site</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Current Workflow Tools</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li><a href="https://drupal.org/project/rules">Rules</a></li>
+        <li><a href="https://drupal.org/project/workbench">Workbench</a></li>
+        <li><a href="https://drupal.org/project/????">LSD Content Staging</a></li>
+        <li><a href="https://drupal.org/project/workflow">Workflow</a></li>
+        <li><a href="https://drupal.org/project/revisioning">Revisioning</a></li>
+        <li><a href="https://drupal.org/project/maestro">Maestro</a></li>
+        <li>...</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Limitations of Existing Solutions</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Little or no support for multiple environments</li>
+        <li>No support for code / config workflow</li>
+        <li>Disempowers content editors</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>WTF is Content?</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/mental-model-drupal.png" alt="Drupal content conceptual model">
+    </article>
+    <footer class="source">Source: <a href="https://drupal.org/node/1175694">Angie Byron</a></footer>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Content Managers don't care</h3>
+      <h3>They just want to get their stuff live!</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/tree-hugger.jpg)">
+    <hgroup>
+      <h2 class="white">Environments</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="https://secure.flickr.com/photos/practicalowl/5476999709/">practicalowl</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/tree-hugger.jpg)">
+    <hgroup>
+      <h2 class="white">Tracking and Audit Trails</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="https://secure.flickr.com/photos/practicalowl/5476999709/">practicalowl</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/stage.jpg)">
+    <hgroup>
+      <h2 class="white">Content Staging</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="http://www.geograph.org.uk/profile/22976">Rod Allday</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/rocket-launch.png)">
+    <hgroup>
+      <h2 class="white">No Touch Deployments</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="https://secure.flickr.com/photos/zoramite/3993280685/in/photostream/">Zoramite</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/kids-rolling.jpg)">
+    <hgroup>
+      <h2>Rolling Releases</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="https://secure.flickr.com/photos/methyl_lives/7046516327/">methyl_lives</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/sandpit.jpg)">
+    <hgroup>
+      <h2>Sandboxed Development</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="https://secure.flickr.com/photos/trommetter/128400664/">trommetter</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/playdoh.png)">
+    <hgroup>
+      <h2 class="white">Flexible</h2>
+    </hgroup>
+    <footer class="source white">Source: <a href="http://sha3teely.com/">Wael Attili</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/pipe.jpg)">
+    <hgroup>
+      <h2>Is this just a pipe dream?</h2>
+    </hgroup>
+    <footer class="source">Source: <a href="https://secure.flickr.com/photos/el_ramon/">Timothy Valentine</a></footer>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>How do we do it?</h3>
+      <h3>There's a module for that! (Almost)</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Universally Unique Identifiers (UUID)</h3>
+      <h3><a href="http://drupal.org/project/uuid">Available now</a></h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Deploy</h3>
+      <h3><a href="http://drupal.org/project/deploy">Available now</a></h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Services</h3>
+      <h3><a href="http://drupal.org/project/services">Available now</a></h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Drush</h3>
+      <h3><a href="http://drupal.org/project/drush">Available now</a></h3>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/mr-bean.jpg)">
+    <hgroup>
+      <h2 class="gray2">Block Entities Aren't Nodes (BEAN)</h2>
+    </hgroup>
+    <footer class="source white">
+      <h3><a href="http://drupal.org/project/bean">Available now</a></h3>
+      Source: <a href="http://www.mrbean.co.uk/">mrbean.co.uk</a>
+    </footer>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Features</h3>
+      <h3><a href="http://drupal.org/project/features">Available now</a></h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Git Library</h2>
+      <h3><a href="http://drupal.org/project/git">Available now</a></h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Features Git</h2>
+      <h3><a href="http://drupal.org/project/features_git">Available now</a></h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Jenkins</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/jenkins.png" alt="Jenkins">
+    </article>
+    <p><a href="http://drupal.org/project/jenkins">Available now</a></p>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/aegir.png)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Why not AEgir?</h2>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Assumptions</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/jobs.png)">
+    <hgroup class="auto-fadein">
+      <h2>Everything is a Job</h2>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/standpipes.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="black">Common Workflow</h2>
+    </hgroup>
+    <footer class="source">Source: <a href="https://secure.flickr.com/photos/mr_t_in_dc/">Mr T in DC</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/london-underground.svg)">
+    <hgroup class="auto-fadein">
+      <h2 class="black">No Dependencies Between Jobs</h2>
+    </hgroup>
+    <footer class="source">Source: <a href="https://en.wikipedia.org/wiki/User:Matthewedwards">Matthewedwards</a></footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/mission-control.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">All Managed by Drupal</h2>
+    </hgroup>
+  </slide>
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/flower-small.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Why bother?</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Empower content managers</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Allow them to be site builders</li>
+        <li>Allow them to be sys admins</li>
+        <li>Don't be afraid to deploy</li>
+        <li>Idea to launched in an afternoon</li>
+        <li>Iterate tightly</li>
+      </ul>
+    </article>
+   </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Streamline Processes</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Remove manual processes</li>
+        <li>Give tools to those with the knowledge</li>
+        <li>Reduce double handling</li>
+        <li>Remove bottlenecks</li>
+        <li>Reduce friction</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="nobackground">
+    <hgroup>
+      <h2 class="gray"><a href="http://drupalflower.com">drupalflower.com</a></h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <span><img src="images/flower.svg"></span>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/flower-small.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>License</h2>
+    </hgroup>
+    <article>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/au/"><img alt="Creative Commons License" style="border-width:0" 
+        src="http://i.creativecommons.org/l/by-nc-sa/3.0/au/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" 
+        property="dct:title" rel="dct:type">Enterprise Drupal DevOps Without the Devs or the Ops</span> by <a xmlns:cc="http://creativecommons.org/ns#" 
+        href="http://davehall.com.au" property="cc:attributionName" rel="cc:attributionURL">Dave Hall</a> is licensed under a <a rel="license" 
+        href="http://creativecommons.org/licenses/by-nc-sa/3.0/au/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License</a>.Based 
+        on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://skwashd.github.com/badcamp-2012-devops/" rel="dct:source">github.com</a>.
+      </p>
+      <p>
+        USS Enterprise photo source <a href="http://www.navy.mil/view_single.asp?id=15091">US Navy</a>, and distributed 
+        under <a href="http://www.navy.mil/about.asp">liberal licensing terms</a>.
+      </p>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
